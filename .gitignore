@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+
+# Build / generated files
+.next/
+out/
+dist/
+build/
+.astro/
+.vercel/
+
+# Local development
+.memory/
+Abilidades-opencode/
+
+# Environment / secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+*.key
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.temp
