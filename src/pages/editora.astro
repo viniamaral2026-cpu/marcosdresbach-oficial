@@ -1,0 +1,53 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Editora — Instituto Brasileiro Dresbach"
+  description="Catálogo de livros, autores e publicações da Editora do Instituto Brasileiro Dresbach"
+>
+<main id="top">
+  <section class="py-8 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h1 class="text-3xl font-bold text-navy mb-6">Editora</h1>
+      <p class="text-lg text-gray-600 mb-6">
+        Catálogo de publicações da Editora do Instituto Brasileiro Dresbach, incluindo
+        livros, revistas e manuscritos.
+      </p>
+
+      <section className="bg-white py-8">
+        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="bg-white rounded-lg p-6 hover:bg-gray-50 transition-colors">
+            <h3 className="text-orange-500">Catálogo</h3>
+            <p className="text-sm text-gray-500">Todos os livros publicados</p>
+          </div>
+          <div className="bg-white rounded-lg p-6 hover:bg-gray-50 transition-colors">
+            <h3 className="text-orange-500">Livros</h3>
+            <p className="text-sm text-gray-500">Obra completa da editora</p>
+          </div>
+          <div className="bg-white rounded-lg p-6 hover:bg-gray-50 transition-colors">
+            <h3 className="text-orange-500">Autores</h3>
+            <p className="text-sm text-gray-500">Autores e colaboradores</p>
+          </div>
+        </section>
+      </section>
+
+      <section className="bg-gray-50 py-8">
+        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="bg-white rounded-lg p-6 hover:bg-gray-50 transition-colors">
+            <h3 className="text-orange-500">Revistas</h3>
+            <p className="text-sm text-gray-500">Publicações periódicas</p>
+          </div>
+          <div className="bg-white rounded-lg p-6 hover:bg-gray-50 transition-colors">
+            <h3 className="text-orange-500">Manuscritos</h3>
+            <p className="text-sm text-gray-500">Obras em submessa</p>
+          </div>
+          <div className="bg-white rounded-lg p-6 hover:bg-gray-50 transition-colors">
+            <h3 className="text-orange-500">Lançamentos</h3>
+            <p className="text-sm text-gray-500">Novidades editoriais</p>
+          </div>
+        </section>
+      </section>
+    </div>
+  </section>
+</main>
+</Base>

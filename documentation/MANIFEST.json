@@ -1,0 +1,28 @@
+{
+  "project": "Fundação Família Dresbach Brasil",
+  "version": "1.0",
+  "year": 2026,
+  "documents": [
+    "00_DOCUMENTO_INSTITUCIONAL/01_Apresentacao_Institucional.md",
+    "00_DOCUMENTO_INSTITUCIONAL/02_Missao_Visao_Valores.md",
+    "01_PROJETO_NACIONAL_PRESERVACAO/01_Projeto_Principal.md",
+    "02_DOSSIE_HISTORICO/01_Dossie_Historico.md",
+    "03_DOSSIE_GENEALOGICO/01_Dossie_Genealogico.md",
+    "04_DOSSIE_VARIANTES/01_Dossie_Variantes.md",
+    "05_DOSSIE_DOCUMENTAL/01_Catalogo_de_Fontes.md",
+    "05_DOSSIE_DOCUMENTAL/02_Matriz_de_Fontes.md",
+    "06_PORTAL_HISTORICO/01_Projeto_do_Portal.md",
+    "06_PORTAL_HISTORICO/02_Politica_de_Publicacao.md",
+    "07_PLANO_DE_TRABALHO/01_Plano_de_Trabalho.md",
+    "07_PLANO_DE_TRABALHO/02_Cronograma.md",
+    "08_METAS_E_INDICADORES/01_Metas.md",
+    "09_ORCAMENTO/01_Orcamento.md",
+    "10_CONTRAPARTIDA_SOCIAL/01_Contrapartida.md",
+    "11_DOCUMENTACAO_JURIDICA_INSTITUCIONAL/01_Checklist.md",
+    "12_DOSSIE_EXECUTIVO/01_Dossie_Executivo.md",
+    "12_DOSSIE_EXECUTIVO/02_Resumo_Executivo.md",
+    "13_ANEXOS/00_Indice_Geral.md",
+    "README.md"
+  ],
+  "status": "base documental requer auditoria do acervo antes de uso externo"
+}

@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f97316">
+<meta name="description" content="Marcos Dresbach — política, propósito e compromisso com o futuro. Propostas, Saúde Única, Instituto Brasileiro Dresbach e participação cidadã.">
+<title>Marcos Dresbach | Política, Propósito e Compromisso</title>
+<style>
+:root{--navy:#071a33;--ink:#0f172a;--muted:#64748b;--orange:#f97316;--amber:#f59e0b;--line:#e2e8f0;--soft:#f8fafc;--white:#fff;--radius:22px;--shadow:0 18px 50px rgba(15,23,42,.10)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#fff}a{text-decoration:none;color:inherit}img{max-width:100%;display:block}button{font:inherit}
+.container{width:min(1180px,calc(100% - 40px));margin:auto}.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(226,232,240,.85)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:950;line-height:.82;font-size:22px;letter-spacing:-1.2px}.brand span{color:var(--orange)}.links{display:flex;gap:22px;font-size:14px;font-weight:700}.links a{padding:28px 0;position:relative}.links a:hover{color:var(--orange)}.links a.active:after{content:"";position:absolute;left:0;right:0;bottom:17px;height:3px;border-radius:9px;background:var(--orange)}.cta{border:0;border-radius:999px;background:linear-gradient(135deg,var(--orange),var(--amber));color:#fff;padding:13px 20px;font-weight:900;cursor:pointer;box-shadow:0 10px 25px rgba(249,115,22,.22)}
+.menu{display:none;border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 12px}.hero{position:relative;overflow:hidden;background:linear-gradient(110deg,#fff 0%,#fff8f2 45%,#e9eef6 100%);min-height:650px}.hero:before{content:"";position:absolute;width:560px;height:560px;border-radius:50%;right:6%;top:45px;border:6px solid transparent;background:linear-gradient(#fff0,#fff0) padding-box,linear-gradient(135deg,var(--orange),var(--amber)) border-box;opacity:.95}.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.02fr .98fr;align-items:center;min-height:650px;gap:30px}.eyebrow{font-size:13px;font-weight:900;letter-spacing:.15em;color:var(--orange);text-transform:uppercase}.hero h1{font-size:clamp(52px,6vw,84px);line-height:.91;letter-spacing:-.065em;margin:18px 0}.hero h1 span{color:var(--orange)}.hero p{font-size:19px;line-height:1.6;color:#334155;max-width:650px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.secondary{border:1px solid #cbd5e1;background:#fff;color:var(--ink);padding:13px 20px;border-radius:999px;font-weight:900}.portrait-wrap{position:relative;display:flex;justify-content:center;align-items:flex-end;height:610px}.portrait{height:600px;width:auto;object-fit:contain;filter:drop-shadow(0 28px 40px rgba(15,23,42,.22))}
+.valuebar{margin-top:-42px;position:relative;z-index:5}.values{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(4,1fr);padding:20px}.value{padding:18px 24px;border-right:1px solid var(--line)}.value:last-child{border-right:0}.value b{display:block;font-size:17px;margin-bottom:7px}.value span{font-size:14px;color:var(--muted);line-height:1.5}
+section{padding:92px 0}.section-head{max-width:760px;margin-bottom:40px}.kicker{color:var(--orange);font-size:13px;font-weight:950;text-transform:uppercase;letter-spacing:.14em}.section-head h2{font-size:clamp(36px,4vw,58px);line-height:1;letter-spacing:-.045em;margin:10px 0 16px}.section-head p{font-size:18px;color:var(--muted);line-height:1.65}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{border:1px solid var(--line);border-radius:var(--radius);padding:28px;background:#fff;box-shadow:0 8px 28px rgba(15,23,42,.06)}.icon{width:46px;height:46px;border-radius:14px;background:#fff1e8;color:var(--orange);display:grid;place-items:center;font-size:23px;margin-bottom:20px}.card h3{margin:0 0 8px;font-size:19px}.card p{margin:0;color:var(--muted);line-height:1.6}
+.dark{background:var(--navy);color:#fff}.dark p{color:#cbd5e1}.dark .card{background:#0d2747;border-color:#193b60}.dark .card p{color:#b9c9da}
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}.feature-media{border-radius:28px;overflow:hidden;min-height:390px}.feature-media img{width:100%;height:100%;object-fit:cover}.feature-copy{border-radius:28px;background:var(--soft);padding:46px}.feature-copy h3{font-size:38px;line-height:1.05;letter-spacing:-.04em;margin:12px 0}.flow{display:grid;gap:10px;margin:25px 0}.flow div{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:#fff;font-weight:800}.flow i{font-style:normal;color:var(--orange)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:22px}.panel{border-radius:28px;overflow:hidden;position:relative;min-height:360px;background:#0b2039;color:#fff}.panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.7}.panel:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,26,51,.92),rgba(7,26,51,.18))}.panel-content{position:relative;z-index:1;padding:42px;max-width:610px}.panel h3{font-size:36px;line-height:1.02;margin:10px 0}.panel p{color:#e2e8f0;line-height:1.6}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.gallery-item{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff}.gallery-item img{width:100%;aspect-ratio:1.35;object-fit:cover}.gallery-item div{padding:15px;font-weight:850;font-size:14px}
+.docs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.doc{border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;gap:16px;align-items:flex-start}.doc-badge{width:42px;height:42px;border-radius:12px;background:#fff1e8;color:var(--orange);display:grid;place-items:center;font-weight:950}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{display:grid;gap:7px}.field.full{grid-column:1/-1}.field label{font-weight:800;font-size:14px}.field input,.field textarea,.field select{border:1px solid #cbd5e1;border-radius:13px;padding:13px 14px;font:inherit;outline:none}.field textarea{min-height:150px;resize:vertical}.field input:focus,.field textarea:focus{border-color:var(--orange);box-shadow:0 0 0 4px rgba(249,115,22,.10)}
+.footer{background:#050f1f;color:#cbd5e1;padding:52px 0}.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:30px}.footer h4{color:#fff;margin:0 0 14px}.footer a{display:block;margin:9px 0;color:#cbd5e1;font-size:14px}.small{font-size:13px;color:#94a3b8;line-height:1.6}
+.page{display:none}.page.active{display:block}
+@media(max-width:900px){.links{display:none}.menu{display:block}.hero-grid,.feature,.split{grid-template-columns:1fr}.hero{min-height:auto}.hero-grid{padding:70px 0 20px}.portrait-wrap{height:500px}.portrait{height:500px}.hero:before{width:420px;height:420px;right:50%;transform:translateX(50%);top:480px}.values,.cards,.docs{grid-template-columns:1fr 1fr}.value:nth-child(2){border-right:0}.value{border-bottom:1px solid var(--line)}.gallery{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.container{width:min(100% - 26px,1180px)}.nav{height:66px}.hero h1{font-size:49px}.hero p{font-size:16px}.values,.cards,.docs,.gallery,.form{grid-template-columns:1fr}.value{border-right:0}.portrait-wrap{height:420px}.portrait{height:430px}.feature-copy,.panel-content{padding:28px}section{padding:64px 0}.links.mobile-open{display:flex;position:absolute;top:66px;left:0;right:0;background:#fff;padding:18px 20px;flex-direction:column;border-bottom:1px solid var(--line);box-shadow:0 20px 40px rgba(15,23,42,.1)}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="#inicio">MARCOS<br><span>DRESBACH</span></a>
+    <nav class="links" id="navLinks">
+      <a href="#inicio">Início</a><a href="#sobre">Sobre</a><a href="#politica">Visão Política</a><a href="#saude-unica">Saúde Única</a><a href="#propostas">Propostas</a><a href="#instituto">Instituto</a><a href="#documentos">Documentos</a><a href="#contato">Contato</a>
+    </nav>
+    <button class="cta" onclick="go('participar')">PARTICIPE</button>
+    <button class="menu" onclick="document.getElementById('navLinks').classList.toggle('mobile-open')" aria-label="Abrir menu">☰</button>
+  </div>
+</header>
+
+<main>
+<section id="inicio" class="page active">
+  <div class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Política · Propósito · Resultados</div>
+        <h1>UM NOVO CAMINHO<br><span>PARA O FUTURO.</span></h1>
+        <p>Política com responsabilidade, participação e compromisso com resultados. Uma atuação voltada à construção de políticas públicas responsáveis, à defesa da liberdade e à busca de soluções concretas para problemas reais.</p>
+        <div class="actions"><button class="cta" onclick="go('propostas')">CONHEÇA MINHAS PROPOSTAS →</button><button class="secondary" onclick="go('participar')">PARTICIPE DO PROJETO</button></div>
+      </div>
+      <div class="portrait-wrap">
+        <img class="portrait" src="assets/marcos-portrait.png" alt="Retrato de Marcos Dresbach">
+      </div>
+    </div>
+  </div>
+  <div class="container valuebar"><div class="values">
+    <div class="value"><b>LIBERDADE</b><span>Responsabilidade individual e respeito às escolhas.</span></div>
+    <div class="value"><b>RESPONSABILIDADE</b><span>Gestão pública eficiente e sustentável.</span></div>
+    <div class="value"><b>TRANSPARÊNCIA</b><span>Prestação de contas e combate ao desperdício.</span></div>
+    <div class="value"><b>RESULTADOS</b><span>Políticas públicas avaliadas por resultados concretos.</span></div>
+  </div></div>
+  <section><div class="container">
+    <div class="section-head"><div class="kicker">Um posicionamento claro</div><h2>Política precisa voltar a ter propósito.</h2><p>Defender uma política séria, eficiente e próxima das pessoas, com responsabilidade fiscal, liberdade, transparência e foco em resultados.</p></div>
+    <div class="cards">
+      <div class="card"><div class="icon">◈</div><h3>Liberdade</h3><p>Respeito às escolhas individuais e às oportunidades de cada cidadão.</p></div>
+      <div class="card"><div class="icon">▦</div><h3>Responsabilidade</h3><p>Gestão pública eficiente, sustentável e orientada por evidências.</p></div>
+      <div class="card"><div class="icon">✓</div><h3>Transparência</h3><p>Prestação de contas, integridade e combate ao desperdício.</p></div>
+      <div class="card"><div class="icon">↗</div><h3>Resultados</h3><p>Metas claras e políticas públicas avaliadas pelo impacto.</p></div>
+    </div>
+  </div></section>
+  <section class="dark"><div class="container"><div class="feature">
+    <div class="feature-media"><img src="assets/02-banner-principal.png" alt="Paisagem urbana para identidade institucional"></div>
+    <div class="feature-copy"><div class="kicker">Alinhamento político</div><h3>Princípios claros para um Brasil mais livre e eficiente.</h3><p>O site apresenta o alinhamento de Marcos Dresbach com princípios associados ao Partido NOVO, sem se apresentar como página oficial do partido.</p><div class="actions"><button class="cta" onclick="go('politica')">CONHEÇA A VISÃO</button></div></div>
+  </div></div></section>
+  <section><div class="container"><div class="feature">
+    <div class="feature-media"><img src="assets/05-causa-animal.png" alt="Causa animal"></div>
+    <div class="feature-copy"><div class="kicker">Saúde Única</div><h3>Cuidar dos animais também é cuidar das pessoas.</h3><p>Uma proposta de prevenção e controle integrado de zoonoses, com foco em saúde humana, animal e ambiental.</p><div class="actions"><button class="cta" onclick="go('saude-unica')">CONHEÇA O PROJETO</button><button class="secondary" onclick="go('documentos')">BAIXAR DOCUMENTOS</button></div></div>
+  </div></div></section>
+  <section class="dark"><div class="container split">
+    <div class="panel"><img src="assets/14-instituto-dresbach.png" alt="Instituto Brasileiro Dresbach"><div class="panel-content"><div class="kicker">Cultura e memória</div><h3>Instituto Brasileiro Dresbach</h3><p>Preservação da Cultura Alemã, pesquisa histórica, genealogia e memória Wittgenstein.</p><button class="cta" onclick="go('instituto')">CONHEÇA O INSTITUTO</button></div></div>
+    <div class="panel"><img src="assets/17-participacao-comunitaria.png" alt="Participação comunitária"><div class="panel-content"><div class="kicker">Participação</div><h3>Essa construção não é individual.</h3><p>Participe, envie sugestões, conheça as propostas e ajude a construir soluções.</p><button class="cta" onclick="go('participar')">QUERO PARTICIPAR</button></div></div>
+  </div></section>
+</section>
+
+<section id="sobre" class="page"><div class="container">
+  <div class="section-head"><div class="kicker">Sobre</div><h2>Minha trajetória, meus valores e meu compromisso.</h2><p>Uma apresentação institucional construída em torno de participação cidadã, responsabilidade e políticas públicas concretas.</p></div>
+  <div class="feature"><div class="feature-media"><img src="assets/01-retrato-oficial.png" alt="Marcos Dresbach"></div><div class="feature-copy"><h3>Propósito antes de discurso.</h3><p>Este espaço apresenta a trajetória, os valores e os projetos que orientam a atuação pública de Marcos Dresbach. O conteúdo deve ser preenchido com a biografia oficial e validada antes da publicação definitiva.</p><div class="flow"><div><i>01</i> Responsabilidade</div><div><i>02</i> Participação</div><div><i>03</i> Resultados</div></div></div></div>
+</div></section>
+
+<section id="politica" class="page dark"><div class="container">
+  <div class="section-head"><div class="kicker">Visão política</div><h2>Uma visão para um Brasil mais livre e eficiente.</h2><p>Liberdade, responsabilidade, transparência, eficiência e respeito ao cidadão como eixos de posicionamento.</p></div>
+  <div class="cards"><div class="card"><div class="icon">◈</div><h3>Liberdade</h3><p>Mais autonomia, respeito às escolhas e ambiente favorável ao trabalho.</p></div><div class="card"><div class="icon">↗</div><h3>Eficiência</h3><p>Serviços públicos orientados por metas, dados e avaliação.</p></div><div class="card"><div class="icon">✓</div><h3>Transparência</h3><p>Prestação de contas e mecanismos de controle.</p></div><div class="card"><div class="icon">⚖</div><h3>Responsabilidade</h3><p>Compromisso com sustentabilidade fiscal e institucional.</p></div></div>
+</div></section>
+
+<section id="saude-unica" class="page"><div class="container">
+  <div class="section-head"><div class="kicker">Projeto prioritário</div><h2>Saúde Única: cuidar dos animais também é cuidar das pessoas.</h2><p>Uma proposta ampla para prevenção integrada de zoonoses, vigilância, saúde animal, saúde humana e ambiente.</p></div>
+  <div class="feature"><div class="feature-media"><img src="assets/06-saude-unica.png" alt="Saúde Única"></div><div class="feature-copy"><h3>Animal → Vigilância → Ambiente → Saúde humana</h3><p>A proposta conecta assistência veterinária de interesse público, vigilância e encaminhamento de pessoas potencialmente expostas, controle ambiental e produção de dados.</p><div class="flow"><div><i>01</i> Animal e risco sanitário</div><div><i>02</i> Vigilância e notificação</div><div><i>03</i> Ambiente e prevenção</div><div><i>04</i> Saúde humana e encaminhamento</div></div></div></div>
+  <section><div class="gallery">
+    <div class="gallery-item"><img src="assets/07-esporotricose.png"><div>Esporotricose</div></div>
+    <div class="gallery-item"><img src="assets/08-leishmaniose-vetores.png"><div>Leishmaniose e vetores</div></div>
+    <div class="gallery-item"><img src="assets/09-controle-ambiental.png"><div>Controle ambiental</div></div>
+    <div class="gallery-item"><img src="assets/10-centro-saude-animal.png"><div>Centro Público de Saúde Animal</div></div>
+    <div class="gallery-item"><img src="assets/11-atendimento-emergencial.png"><div>Atendimento emergencial</div></div>
+    <div class="gallery-item"><img src="assets/12-vigilancia-epidemiologica.png"><div>Vigilância epidemiológica</div></div>
+    <div class="gallery-item"><img src="assets/13-saude-humana.png"><div>Saúde humana</div></div>
+    <div class="gallery-item"><img src="assets/05-causa-animal.png"><div>Causa animal</div></div>
+  </div></section>
+</div></section>
+
+<section id="propostas" class="page"><div class="container">
+  <div class="section-head"><div class="kicker">Propostas</div><h2>Ideias para transformar problemas em resultados.</h2><p>Áreas prioritárias organizadas para facilitar o entendimento e a participação.</p></div>
+  <div class="cards">
+    <div class="card"><div class="icon">♥</div><h3>Saúde Única</h3><p>Prevenção de zoonoses e integração entre saúde humana, animal e ambiental.</p></div>
+    <div class="card"><div class="icon">🐾</div><h3>Causa Animal</h3><p>Proteção, bem-estar e assistência de interesse público.</p></div>
+    <div class="card"><div class="icon">↗</div><h3>Eficiência Pública</h3><p>Gestão moderna, metas e avaliação de resultados.</p></div>
+    <div class="card"><div class="icon">◈</div><h3>Liberdade</h3><p>Respeito ao cidadão, trabalho e desenvolvimento.</p></div>
+    <div class="card"><div class="icon">▦</div><h3>Desenvolvimento Regional</h3><p>Soluções adaptadas às necessidades dos municípios e comunidades.</p></div>
+    <div class="card"><div class="icon">⌂</div><h3>Cultura e Identidade</h3><p>Preservação de patrimônio, memória e história.</p></div>
+    <div class="card"><div class="icon">◎</div><h3>Educação</h3><p>Investimento em pessoas e oportunidades.</p></div>
+    <div class="card"><div class="icon">♧</div><h3>Participação Comunitária</h3><p>Cidadãos mais próximos das decisões públicas.</p></div>
+  </div>
+</div></section>
+
+<section id="instituto" class="page"><div class="container">
+  <div class="section-head"><div class="kicker">Instituto Brasileiro Dresbach</div><h2>Cultura, memória e identidade.</h2><p>Preservação da Cultura Alemã, pesquisa histórica, genealogia e memória Wittgenstein.</p></div>
+  <div class="feature"><div class="feature-media"><img src="assets/15-cultura-alema.png" alt="Cultura alemã"></div><div class="feature-copy"><h3>Preservar o passado para compreender o futuro.</h3><p>O Instituto Brasileiro Dresbach reúne iniciativas de preservação cultural, pesquisa histórica, documentação e memória regional.</p><div class="gallery" style="margin-top:20px"><div class="gallery-item"><img src="assets/16-genealogia.png"><div>Genealogia</div></div><div class="gallery-item"><img src="assets/14-instituto-dresbach.png"><div>Instituto</div></div></div></div></div>
+</div></section>
+
+<section id="participar" class="page"><div class="container">
+  <div class="section-head"><div class="kicker">Participação</div><h2>Essa construção não é individual.</h2><p>Envie uma sugestão, apoie uma pauta, participe do projeto ou ajude a divulgar.</p></div>
+  <div class="split"><div class="panel"><img src="assets/17-participacao-comunitaria.png" alt="Participação comunitária"><div class="panel-content"><h3>Participe das pautas.</h3><p>Uma plataforma política precisa ouvir quem vive os problemas na prática.</p></div></div><div class="card"><h3>Como você pode ajudar</h3><div class="flow"><div><i>01</i> Apoiar uma pauta</div><div><i>02</i> Enviar sugestão</div><div><i>03</i> Participar</div><div><i>04</i> Divulgar</div></div><button class="cta" onclick="go('contato')">ENTRAR EM CONTATO</button></div></div>
+</div></section>
+
+<section id="documentos" class="page"><div class="container">
+  <div class="section-head"><div class="kicker">Documentos</div><h2>Projetos, estudos e propostas.</h2><p>Área preparada para disponibilizar o pacote legislativo e técnico da pauta.</p></div>
+  <div class="docs">
+    <div class="doc"><div class="doc-badge">PL</div><div><b>Projeto de Lei — Saúde Única</b><p class="small">Proposta legislativa estruturada.</p><button class="secondary">Visualizar</button></div></div>
+    <div class="doc"><div class="doc-badge">ET</div><div><b>Estudo Técnico</b><p class="small">Fundamentação e diagnóstico.</p><button class="secondary">Visualizar</button></div></div>
+    <div class="doc"><div class="doc-badge">NT</div><div><b>Nota Técnica Jurídica</b><p class="small">Análise de viabilidade legislativa.</p><button class="secondary">Visualizar</button></div></div>
+    <div class="doc"><div class="doc-badge">$$</div><div><b>Impacto Orçamentário</b><p class="small">Cenários e estimativas.</p><button class="secondary">Visualizar</button></div></div>
+    <div class="doc"><div class="doc-badge">5A</div><div><b>Plano de Implementação</b><p class="small">Estratégia de implantação.</p><button class="secondary">Visualizar</button></div></div>
+    <div class="doc"><div class="doc-badge">EV</div><div><b>Dossiê de Evidências</b><p class="small">Fontes e referências.</p><button class="secondary">Visualizar</button></div></div>
+  </div>
+</div></section>
+
+<section id="contato" class="page"><div class="container">
+  <div class="section-head"><div class="kicker">Contato</div><h2>Fale com Marcos Dresbach.</h2><p>Canal para sugestões, propostas, participação e assuntos institucionais.</p></div>
+  <form class="form" onsubmit="event.preventDefault();alert('Mensagem registrada no protótipo. Conecte este formulário ao backend antes da publicação.');">
+    <div class="field"><label>Nome</label><input required placeholder="Seu nome"></div>
+    <div class="field"><label>E-mail</label><input required type="email" placeholder="voce@email.com"></div>
+    <div class="field"><label>Telefone</label><input placeholder="(00) 00000-0000"></div>
+    <div class="field"><label>Cidade</label><input placeholder="Sua cidade"></div>
+    <div class="field full"><label>Assunto</label><select><option>Sugestão</option><option>Participação</option><option>Saúde Única</option><option>Instituto</option><option>Imprensa</option></select></div>
+    <div class="field full"><label>Mensagem</label><textarea required placeholder="Escreva sua mensagem..."></textarea></div>
+    <div class="field full"><button class="cta" type="submit">ENVIAR MENSAGEM →</button></div>
+  </form>
+</div></section>
+</main>
+
+<footer class="footer"><div class="container footer-grid">
+  <div><div class="brand">MARCOS<br><span>DRESBACH</span></div><p class="small">Política, propósito e compromisso com o futuro.</p></div>
+  <div><h4>Navegação</h4><a href="#sobre">Sobre</a><a href="#politica">Visão Política</a><a href="#propostas">Propostas</a><a href="#saude-unica">Saúde Única</a></div>
+  <div><h4>Institucional</h4><a href="#instituto">Instituto</a><a href="#documentos">Documentos</a><a href="#contato">Contato</a><p class="small">Este site apresenta posicionamentos, propostas e informações institucionais de Marcos Dresbach.</p></div>
+</div></footer>
+<script>
+const ids=['inicio','sobre','politica','saude-unica','propostas','instituto','participar','documentos','contato'];
+function go(id){location.hash=id}
+function render(){
+  const id=(location.hash||'#inicio').slice(1);
+  document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));
+  document.querySelectorAll('.links a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+window.addEventListener('hashchange',render); render();
+</script>
+</body>
+</html>

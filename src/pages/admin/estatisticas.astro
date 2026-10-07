@@ -1,0 +1,130 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base
+  title="Estatísticas — Marcos Dresbach"
+  description="Estatísticas gerais do Instituto Brasileiro Dresbach"
+>
+  <!-- Admin header nav -->
+  <div class="fixed top-0 right-0 z-50 bg-gray-800 border-l-2 border-orange-500 w-16 min-h-screen">
+    <div class="p-4 pt-6">
+      <a href="/admin/dashboard" class="block text-center text-orange-400 mb-8 text-lg font-bold mb-2">ADM</a>
+      <a href="/admin/dashboard" class="block text-gray-300 hover:text-orange-400 p-2 rounded mb-2">Dashboard</a>
+      <a href="/admin/estatisticas" class="block text-gray-300 hover:text-orange-400 p-2 rounded mb-2">Estatísticas</a>
+    </div>
+  </div>
+
+  <main class="ml-16 p-6">
+    <div class="py-20">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-2xl font-bold text-navy mb-8">Estatísticas Gerais</h2>
+
+        {/* KPI Cards */}
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 mb-8">
+          <div class="bg-white rounded-lg p-4 shadow-sm">
+            <div class="text-gray-500 text-xs uppercase tracking-wider mb-2">Páginas Web</div>
+            <div class="text-3xl font-bold text-navy" id="web-pages">4</div>
+            <div class="text-green-500 text-sm font-medium">+0 desde 2024</div>
+          </div>
+          <div class="bg-white rounded-lg p-4 shadow-sm">
+            <div class="text-gray-500 text-xs uppercase tracking-wider mb-2">Migrações BD</div>
+            <div class="text-3xl font-bold text-navy" id="db-migrations">11</div>
+            <div class="text-green-500 text-sm font-medium">✓ Todas concluídas</div>
+          </div>
+          <div class="bg-white rounded-lg p-4 shadow-sm">
+            <div class="text-gray-500 text-xs uppercase tracking-wider mb-2">Arquivos CSS</div>
+            <div class="text-3xl font-bold text-navy" id="css-files">1</div>
+            <div class="text-green-500 text-sm font-medium">Global stylesheet</div>
+          </div>
+          <div class="bg-white rounded-lg p-4 shadow-sm">
+            <div class="text-gray-500 text-xs uppercase tracking-wider mb-2">Componentes Astro</div>
+            <div class="text-3xl font-bold text-navy" id="astro-comps">5</div>
+            <div class="text-green-500 text-sm font-medium">Header, Footer, Icons, Base, Pages</div>
+          </div>
+        </div>
+
+        {/* Pages Overview Table */}
+        <div class="bg-white rounded-lg p-6 shadow-sm mb-8">
+          <h3 class="text-orange-500 text-sm font-medium uppercase tracking-wider mb-4">Visão Geral das Páginas</h3>
+          <table>
+            <thead>
+              <tr class="text-xs text-gray-500 uppercase tracking-wider border-b border-gray-200">
+                <th class="py-3">Página</th>
+                <th class="py-3">URL</th>
+                <th class="py-3">Categoria</th>
+                <th class="py-3">Status</th>
+              </tr>
+            </thead>
+            <tbody class="text-sm text-gray-600">
+              <tr class="border-b border-gray-200">
+                <td class="py-3">Início</td>
+                <td class="py-3">/</td>
+                <td class="py-3">Home</td>
+                <td class="py-3 text-green-500">✓ Ativa</td>
+              </tr>
+              <tr class="border-b border-gray-200">
+                <td class="py-3">Sobre</td>
+                <td class="py-3">/sobre</td>
+                <td class="py-3">Institucional</td>
+                <td class="py-3 text-green-500">✓ Ativa</td>
+              </tr>
+              <tr class="border-b border-gray-200">
+                <td class="py-3">Contato</td>
+                <td class="py-3">/contato</td>
+                <td class="py-3">Contato</td>
+                <td class="py-3 text-green-500">✓ Ativa</td>
+              </tr>
+              <tr class="border-b border-gray-200 bg-gray-50">
+                <td class="py-3">Instituto</td>
+                <td class="py-3">/instituto</td>
+                <td class="py-3">Memorial</td>
+                <td class="py-3 text-green-500">✓ Ativa</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        {/* Components List */}
+        <div class="bg-white rounded-lg p-6 shadow-sm">
+          <h3 class="text-orange-500 text-sm font-medium uppercase tracking-wider mb-4">Componentes do Front-end</h3>
+          <ul class="space-y-3 text-sm text-gray-500 line-height-1.8">
+            <li><strong>Header.astro</strong> - Navigação principal com menu dropdown</li>
+            <li><strong>Footer.astro</strong> - Rodapé com redes sociais e contatos</li>
+            <li><strong>Icons.astro</strong> - Símbolos SVG (23 símbolos)</li>
+            <li><strong>Base.astro</strong> - Template layout wrapper com scripts interativos</li>
+            <li><strong>4 páginas</strong> - index, sobre, contato, instituto</li>
+          </ul>
+        </div>
+
+        {/* Backend Info */}
+        <div class="bg-white rounded-lg p-6 shadow-sm">
+          <h3 class="text-orange-500 text-sm font-medium uppercase tracking-wider mb-4">Backend (Laravel)</h3>
+          <ul class="space-y-3 text-sm text-gray-500 line-height-1.8">
+            <li>11 migrações de banco de dados completas</li>
+            <li>Modelos: User (com hashing de senha)</li>
+            <li>Migrações completas: users, roles, permissions, genealogy, encyclopedia, sources, archive, documents, media, search contributions system</li>
+            <li>PHPUnit: 2 testes passando</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // KPI interatividade simples
+    document.querySelectorAll('.stat-card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-4px)';
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0)';
+      });
+    });
+
+    // KPI values display
+    document.getElementById('web-pages').textContent = '4';
+    document.getElementById('db-migrations').textContent = '11';
+    document.getElementById('css-files').textContent = '1';
+    document.getElementById('astro-comps').textContent = '5';
+  </script>
+</Base>

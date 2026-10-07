@@ -1,0 +1,142 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base
+  title="Dashboard — Marcos Dresbach"
+  description="Painel administrativo com visão geral do Instituto Brasileiro Dresbach"
+>
+  <!-- Admin header nav -->
+  <div class="fixed top-0 right-0 z-50 bg-gray-800 border-l-2 border-orange-500 w-16 min-h-screen">
+    <div class="p-4 pt-6">
+      <a href="/admin/dashboard" class="block text-center text-orange-400 mb-8 text-lg font-bold mb-2">ADM</a>
+      <a href="/admin/dashboard" class="block text-gray-300 hover:text-orange-400 p-2 rounded mb-2">Dashboard</a>
+      <a href="/admin/estatisticas" class="block text-gray-300 hover:text-orange-400 p-2 rounded mb-2">Estatísticas</a>
+    </div>
+  </div>
+
+  <main class="ml-16 p-6">
+    <div class="pt-20">
+      <div class="max-w-7xl mx-auto">
+        <h1 class="text-3xl font-bold text-navy mb-6">Painel de Visão</h1>
+
+        {/* KPIs */}
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 mb-8">
+          <div class="bg-white rounded-lg p-4 shadow-sm">
+            <div class="text-gray-500 text-xs uppercase tracking-wider mb-2">Páginas do Site</div>
+            <div class="text-3xl font-bold text-navy">4</div>
+            <div class="text-green-500 text-sm font-medium">Ativas</div>
+          </div>
+          <div class="bg-white rounded-lg p-4 shadow-sm">
+            <div class="text-gray-500 text-xs uppercase tracking-wider mb-2">Migrações BD</div>
+            <div class="text-3xl font-bold text-navy">11</div>
+            <div class="text-green-500 text-sm font-medium">Concluídas</div>
+          </div>
+          <div class="bg-white rounded-lg p-4 shadow-sm">
+            <div class="text-gray-500 text-xs uppercase tracking-wider mb-2">Arquivos CSS</div>
+            <div class="text-3xl font-bold text-navy">1</div>
+            <div class="text-green-500 text-sm font-medium">Global</div>
+          </div>
+          <div class="bg-white rounded-lg p-4 shadow-sm">
+            <div class="text-gray-500 text-xs uppercase tracking-wider mb-2">Componentes Astro</div>
+            <div class="text-3xl font-bold text-navy">5</div>
+            <div class="text-green-500 text-sm font-medium">Header, Footer, Icons, Base, Pages</div>
+          </div>
+        </div>
+
+        {/* Charts Row */}
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <h3 class="text-orange-500 text-sm font-medium uppercase tracking-wider mb-4">Distribuição de Páginas</h3>
+            <canvas id="page-chart" class="w-full h-64"></canvas>
+          </div>
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <h3 class="text-orange-500 text-sm font-medium uppercase tracking-wider mb-4">Status das Migrações</h3>
+            <canvas id="migration-chart" class="w-full h-64"></canvas>
+          </div>
+        </div>
+
+        {/* Recent Files Table */}
+        <div class="bg-white rounded-lg p-6 shadow-sm">
+          <h3 class="text-orange-500 text-sm font-medium uppercase tracking-wider mb-4">Arquivos Recentes</h3>
+          <div class="overflow-x-auto">
+            <table class="min-w-full bg-gray-50 rounded-lg">
+              <thead>
+                <tr class="text-left text-xs text-gray-500 uppercase tracking-wider">
+                  <th class="py-3 border-b border-gray-200">Arquivo</th>
+                  <th class="py-3 border-b border-gray-200">Tipo</th>
+                  <th class="py-3 border-b border-gray-200">Linhas</th>
+                  <th class="py-3 border-b border-gray-200">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-gray-200">
+                  <td class="py-4">src/pages/index.astro</td>
+                  <td class="py-4 text-gray-500">Astro Page</td>
+                  <td class="py-4">62</td>
+                  <td class="py-4 text-green-500">✓</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-4">src/pages/sobre.astro</td>
+                  <td class="py-4 text-gray-500">Astro Page</td>
+                  <td class="py-4">36</td>
+                  <td class="py-4 text-green-500">✓</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-4">src/pages/contato.astro</td>
+                  <td class="py-4 text-gray-500">Astro Page</td>
+                  <td class="py-4">27</td>
+                  <td class="py-4 text-green-500">✓</td>
+                </tr>
+                <tr class="border-b border-gray-200 bg-gray-50">
+                  <td class="py-4">src/pages/instituto.astro</td>
+                  <td class="py-4 text-gray-500">Astro Page</td>
+                  <td class="py-4">32</td>
+                  <td class="py-4 text-green-500">✓</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <footer class="mt-8 pt-8 border-t border-gray-200 text-xs text-gray-500">
+          <span>Data as of: <span id="data-date"></span></span>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // KPI data render
+    document.getElementById('data-date').textContent = new Date().toLocaleDateString('pt-BR');
+
+    // Chart: Pages distribution
+    const pageCtx = document.getElementById('page-chart').getContext('2d');
+    new window.Chart(pageCtx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Início', 'Sobre', 'Contato', 'Instituto'],
+        datasets: [{
+          data: [1, 1, 1, 1],
+          backgroundColor: ['#f97316', '#fb923c', '#ffd9b0', '#a855f6']
+        }]
+      },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
+    });
+
+    // Chart: Migration status
+    const migrationCtx = document.getElementById('migration-chart').getContext('2d');
+    const migrationData = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]; // 11 migrations complete
+    new window.Chart(migrationCtx, {
+      type: 'bar',
+      data: {
+        labels: ['users', 'roles', 'genealogy', 'encyclopedia', 'sources', 'archive', 'documents', 'search', 'complete', 'pending', 'outros'],
+        datasets: [{
+          label: 'Status',
+          data: migrationData.map(s => s ? 1 : 0),
+          backgroundColor: migrationData.map((s, i) => s ? '#28a745' : '#dc3545')
+        }]
+      },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, max: 1 } } }
+    });
+  </script>
+</Base>

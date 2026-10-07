@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Fale com Marcos Dresbach | Contato" description="Envie sua mensagem, sugestão ou proposta para Marcos Dresbach.">
+<main id="top">
+<section class="ch"><div class="w"><nav class="bc" aria-label="Você está em"><a href="/">Início</a>›<b>Contato</b></nav>
+<h1>Fale com <span>Marcos Dresbach.</span></h1><p>Sua opinião, sugestão e participação são muito importantes para construir soluções reais para a nossa comunidade.</p></div></section>
+<div class="cc"><section class="fp" aria-labelledby="f1"><h2 id="f1">Envie sua mensagem</h2><p>Preencha o formulário abaixo. Retornaremos o mais breve possível.</p>
+<form id="cf"><div class="g2"><div><label for="nome">Nome <i>*</i></label><input id="nome" name="nome" type="text" placeholder="Seu nome completo" required></div><div><label for="email">E-mail <i>*</i></label><input id="email" name="email" type="email" placeholder="seu@email.com" required></div><div><label for="tel">Telefone</label><input id="tel" name="tel" type="tel" placeholder="(51) 99999-9999"></div><div><label for="cidade">Cidade</label><input id="cidade" name="cidade" type="text" placeholder="Sua cidade"></div>
+<div class="full"><label for="as">Assunto <i>*</i></label><select id="as" name="as" required><option value="">Selecione o assunto</option><option>Sugestão</option><option>Proposta</option><option>Saúde Única e causa animal</option><option>Instituto Brasileiro Dresbach</option><option>Imprensa</option><option>Outros</option></select></div>
+<div class="full"><label for="ms">Mensagem <i>*</i></label><textarea id="ms" name="ms" rows="4" required placeholder="Escreva sua mensagem aqui..."></textarea></div></div>
+<label class="ag"><input type="checkbox" required> Autorizo o tratamento dos meus dados para finalidade de contato, conforme a legislação aplicável.</label>
+<button class="btn" type="submit"><svg><use href="#send"/></svg>ENVIAR MENSAGEM</button><p id="fs" role="status" style="margin:12px 0 0;font-size:.82rem;color:var(--gr)">Ao enviar, o WhatsApp abre com a sua mensagem pronta para envio.</p></form></section>
+<div class="rc"><h2 style="margin-top:0">Outros canais de contato</h2><p>Você também pode falar conosco pelos canais abaixo:</p>
+<div class="cg"><a class="ct" href="https://wa.me/555137866302" rel="noopener"><span class="ic" style="background:#25D366"><svg><use href="#chat"/></svg></span><span><b>WhatsApp</b><span class="v">+55 51 3786-6302</span><small>Fale diretamente pelo WhatsApp.</small></span></a><a class="ct" href="tel:+555137866302"><span class="ic" style="background:#F97316"><svg><use href="#ph"/></svg></span><span><b>Telefone</b><span class="v">+55 51 3786-6302</span><small>Ligue para o Instituto.</small></span></a><a class="ct" href="mailto:contato@institutodresbach.fi"><span class="ic" style="background:#2563EB"><svg><use href="#ml"/></svg></span><span><b>E-mail</b><span class="v">contato@institutodresbach.fi</span><small>Envie sua mensagem por e-mail.</small></span></a><a class="ct" href="#regiao"><span class="ic" style="background:#E11D2E"><svg><use href="#pin"/></svg></span><span><b>Localização</b><span class="v">Taquara – RS</span><small>Atuação regional no Vale do Paranhana e região.</small></span></a></div>
+<h2>Redes sociais</h2><p>Acompanhe meu trabalho e participe também pelas redes sociais.</p>
+<div class="sg"><a href="https://www.instagram.com/" rel="noopener" aria-label="Instagram de Marcos Dresbach"><span class="ic" style="background:linear-gradient(45deg,#f9a03f,#e1306c,#833ab4)"><svg><use href="#ig"/></svg></span>Instagram</a><a href="https://www.facebook.com/" rel="noopener" aria-label="Facebook de Marcos Dresbach"><span class="ic" style="background:#1877F2"><svg><use href="#fb"/></svg></span>Facebook</a><a href="https://www.youtube.com/" rel="noopener" aria-label="YouTube de Marcos Dresbach"><span class="ic" style="background:#FF0000"><svg><use href="#yt"/></svg></span>YouTube</a><a href="https://www.linkedin.com/" rel="noopener" aria-label="LinkedIn de Marcos Dresbach"><span class="ic" style="background:#0A66C2"><svg><use href="#in"/></svg></span>LinkedIn</a></div></div></div>
+<div class="bt"><section class="bx2"><span class="ic"><svg><use href="#users"/></svg></span><div><h2>Sua participação faz a diferença.</h2><p>Sugestões, críticas e ideias ajudam a construir políticas públicas mais eficientes e uma comunidade mais justa, segura e preparada para o futuro.</p></div></section>
+<section class="bx2 rg" id="regiao"><span class="ic"><svg><use href="#pin"/></svg></span><div><h2>Nossa região</h2><p>Atuação com foco no Vale do Paranhana e região, fortalecendo as pessoas, os animais e as comunidades.</p></div></section></div></main>
+<script is:inline>
+
+document.getElementById('cf').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.target),g=k=>(f.get(k)||'').toString().trim();
+const t=['Mensagem para Marcos Dresbach','Nome: '+g('nome'),'E-mail: '+g('email'),'Telefone: '+g('tel'),'Cidade: '+g('cidade'),'Assunto: '+g('as'),'',g('ms'),'','Autorizo o tratamento dos meus dados para contato.'].join('\n');
+window.open('https://wa.me/555137866302?text='+encodeURIComponent(t),'_blank','noopener');document.getElementById('fs').textContent='Abrimos o WhatsApp com a sua mensagem. Envie para concluir.'});
+
+</script>
+</Base>

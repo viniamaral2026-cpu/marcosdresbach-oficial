@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcos Dresbach — Painel de Visão</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1" integrity="sha384-jb8JQMbMoBUzgWatfe6COACi2ljcDqDQz2OxczGA3bGNeWe+6DChMTBJemed7ZnvJ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0" integrity="sha384-cVMg8E3QFwTvGCDuK+ET4PD341jF3W8nO1auiXfuZNQkzb0ec3Gs9fQ4IzR" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --bg-primary: #071a33;
+            --bg-card: #0f2648;
+            --bg-header: #05122a;
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --text-on-dark: #ffffff;
+            --color-1: #f97316;
+            --color-2: #fb923c;
+            --color-3: #ffd9b0;
+            --color-4: #a855f6;
+            --color-5: #22c55e;
+            --color-6: #eab308;
+            --positive: #28a745;
+            --negative: #dc3545;
+            --neutral: #64748b;
+            --gap: 16px;
+            --radius: 8px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.5;
+        }
+        .dashboard-container { max-width: 1400px; margin: 0 auto; padding: var(--gap); }
+        .dashboard-header {
+            background: var(--bg-header);
+            color: var(--text-on-dark);
+            padding: 24px;
+            border-radius: var(--radius);
+            margin-bottom: var(--gap);
+        }
+        .dashboard-header h1 {
+            font-size: 20px; font-weight: 600;
+        }
+        .filters { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+        .filter-group { display: flex; align-items: center; gap: 6px; }
+        .filter-group label { font-size: 12px; color: rgba(255,255,255,0.7); }
+        .filter-group select,
+        .filter-group input[type="date"] {
+            padding: 6px 10px; border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 4px; background: rgba(255,255,255,0.1); color: var(--text-primary);
+            font-size: 13px;
+        }
+        .filter-group select option { background: var(--bg-header); color: var(--text-secondary); }
+        .kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--gap); margin-bottom: var(--gap); }
+        .kpi-card { background: var(--bg-card); border-radius: var(--radius); padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
+        .kpi-label { font-size: 12px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+        .kpi-value { font-size: 24px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+        .kpi-change { font-size: 12px; font-weight: 500; }
+        .kpi-change.positive { color: var(--positive); }
+        .kpi-change.negative { color: var(--negative); }
+        .chart-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: var(--gap); margin-bottom: var(--gap); }
+        .chart-container { background: var(--bg-card); border-radius: var(--radius); padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
+        .chart-container h3 { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 12px; }
+        .chart-container canvas { max-height: 250px; }
+        .table-section { background: var(--bg-card); border-radius: var(--radius); padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.3); overflow-x: auto; }
+        .data-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+        .data-table thead th { text-align: left; padding: 8px 10px; border-bottom: 2px solid #4a5568; color: var(--text-secondary); font-weight: 600; font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; user-select: none; }
+        .data-table thead th:hover { color: var(--text-primary); background: #2d3748; }
+        .data-table tbody td { padding: 8px 10px; border-bottom: 1px solid #4a5568; }
+        .data-table tbody tr:hover { background: #2d3748; }
+        .footer { margin-top: var(--gap); font-size: 12px; color: var(--text-secondary); }
+        @media (max-width: 768px) {
+            .dashboard-header { flex-direction: column; align-items: flex-start; }
+            .kpi-row { grid-template-columns: repeat(2, 1fr); }
+            .chart-row { grid-template-columns: 1fr; }
+            .filters { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <h1>Marcos Dresbach — Painel de Visão</h1>
+            <div class="filters">
+                <div class="filter-group">
+                    <label>Período</label>
+                    <select id="period-select">
+                        <option value="all">Todos</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="kpi-row">
+            <div class="kpi-card">
+                <div class="kpi-label">Páginas do Site</div>
+                <div class="kpi-value" id="pages-count">4</div>
+                <div class="kpi-change positive">Ativas</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Migrações BD</div>
+                <div class="kpi-value" id="migrations-count">11</div>
+                <div class="kpi-change positive">Concluídas</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Arquivos CSS</div>
+                <div class="kpi-value" id="css-files">1</div>
+                <div class="kpi-change positive">Global</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Componentes Astro</div>
+                <div class="kpi-value" id="astro-comps">5</div>
+                <div class="kpi-change positive">Header, Footer, Icons, Base, Pages</div>
+            </div>
+        </div>
+
+        <div class="chart-row">
+            <div class="chart-container">
+                <h3>Distribuição de Páginas</h3>
+                <canvas id="page-chart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>Status das Migrações</h3>
+                <canvas migration-chart></canvas>
+            </div>
+        </div>
+
+        <div class="table-section">
+            <h3>Arquivos Recentes</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Arquivo</th>
+                        <th>Tipo</th>
+                        <th>Linhas</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>src/pages/index.astro</td><td>Astro Page</td><td>62</td><td>✓</td></tr>
+                    <tr><td>src/pages/sobre.astro</td><td>Astro Page</td><td>36</td><td>✓</td></tr>
+                    <tr><td>src/pages/contato.astro</td><td>Astro Page</td><td>27</td><td>✓</td></tr>
+                    <tr><td>src/pages/instituto.astro</td><td>Astro Page</td><td>32</td><td>✓</td></tr>
+                    <tr><td>src/styles/global.css</td><td>CSS Global</td><td>157</td><td>✓</td></tr>
+                    <tr><td>backend/database/migrations/</td><td>Laravel Migrations</td><td>11</td><td>✓</td></tr>
+                    <tr><td>backend/composer.json</td><td>Composer</td><td>86</td><td>✓</td></tr>
+                    <tr><td>astro.config.mjs</td><td>Astro Config</td><td>5</td><td>✓</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <footer class="footer">
+            <span>Data as of: <span id="data-date"></span></span>
+        </footer>
+    </div>
+
+    <script>
+        // Embedded project data
+        const DATA = {
+            pages: [
+                { name: 'Início', url: '/', category: 'home', status: 'active' },
+                { name: 'Sobre', url: '/sobre', category: 'about', status: 'active' },
+                { name: 'Contato', url: '/contato', category: 'contact', status: 'active' },
+                { name: 'Instituto', url: '/instituto', category: 'institute', status: 'active' }
+            ],
+            migrations: [
+                { name: 'users', status: 'complete', type: 'users' },
+                { name: 'roles', status: 'complete', type: 'permissions' },
+                { name: 'genealogy', status: 'complete', type: 'places/people' },
+                { name: 'encyclopedia', status: 'complete', type: 'articles/categories' },
+                { name: 'sources', status: 'complete', type: 'archives' },
+                { name: 'archive', status: 'complete', type: 'fonds/description' },
+                { name: 'documents', status: 'complete', type: 'media/documents' },
+                { name: 'search', status: 'complete', type: 'indexes/contributions' },
+                { name: 'complete', status: 'complete', type: 'all' }
+            ],
+            kpis: {
+                totalPages: 4,
+                activeMigrations: 11,
+                cssFiles: 1,
+                astroComponents: 5
+            }
+        };
+
+        // Chart: Pages distribution
+        const pageCtx = document.getElementById('page-chart').getContext('2d');
+        new Chart(pageCtx, {
+            type: 'doughnut',
+            data: {
+                labels: DATA.pages.map(p => p.name),
+                datasets: [{
+                    data: DATA.pages.map(p => 1),
+                    backgroundColor: ['#f97316', '#fb923c', '#ffd9b0', '#a855f6']
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
+        });
+
+        // Chart: Migration status
+        const migrationCtx = document.querySelector('[migration-chart]').getContext('2d');
+        const migrationData = DATA.migrations.map(m => m.status === 'complete' ? 1 : 0);
+        new Chart(migrationCtx, {
+            type: 'bar',
+            data: {
+                labels: DATA.migrations.map(m => m.name.substring(0, 15) + (m.name.length > 15 ? '...' : '')),
+                datasets: [{ label: 'Status', data: migrationData, backgroundColor: migrationData.map((s, i) => s ? '#28a745' : '#dc3545') }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, max: 1 } } }
+        });
+
+        // Render KPIs
+        document.getElementById('pages-count').textContent = DATA.kpis.totalPages;
+        document.getElementById('migrations-count').textContent = DATA.kpis.activeMigrations;
+        document.getElementById('css-files').textContent = DATA.kpis.cssFiles;
+        document.getElementById('astro-comps').textContent = DATA.kpis.astroComponents;
+
+        // Format date
+        document.getElementById('data-date').textContent = new Date().toLocaleDateString('pt-BR');
+
+        // Filter logic
+        const periodSelect = document.getElementById('period-select');
+        periodSelect.addEventListener('change', (e) => {
+            const period = e.target.value;
+            // In a real dashboard, this would filter data by period
+            alert('Período selecionado: ' + period);
+        });
+    </script>
+</body>
+</html>

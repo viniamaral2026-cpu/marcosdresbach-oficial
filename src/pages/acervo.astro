@@ -1,0 +1,53 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Acervo — Instituto Brasileiro Dresbach"
+  description="Catálogo público do acervo do Instituto Brasileiro Dresbach"
+>
+<main id="top">
+  <section class="py-8 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h1 class="text-3xl font-bold text-navy mb-6">Acervo Público</h1>
+      <p class="text-lg text-gray-600 mb-6">
+        Explore documentos, fotografias, manuscritos, mapas e outros materiais históricos
+        do Instituto Brasileiro Dresbach.
+      </p>
+
+      <section className="bg-white py-8">
+        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="bg-white rounded-lg p-6 hover:bg-gray-50 transition-colors">
+            <h3 className="text-orange-500">Documentos</h3>
+            <p className="text-sm text-gray-500">Registros históricos, certificados, cartas</p>
+          </div>
+          <div className="bg-white rounded-lg p-6 hover:bg-gray-50 transition-colors">
+            <h3 className="text-orange-500">Fotografias</h3>
+            <p className="text-sm text-gray-500">Fotos de família, eventos, locais históricos</p>
+          </div>
+          <div className="bg-white rounded-lg p-6 hover:bg-gray-50 transition-colors">
+            <h3 className="text-orange-500">Mapas</h3>
+            <p className="text-sm text-gray-500">Mapas regionais, imigração, plantas arquitetônicas</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-gray-50 py-8">
+        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="bg-white rounded-lg p-6 hover:bg-gray-50 transition-colors">
+            <h3 className="text-orange-500">Livros</h3>
+            <p className="text-sm text-gray-500">Publicações e obras do Instituto</p>
+          </div>
+          <div className="bg-white rounded-lg p-6 hover:bg-gray-50 transition-colors">
+            <h3 className="text-orange-500">Jornais</h3>
+            <p className="text-sm text-gray-500">Jornais e publicações periódicas</p>
+          </div>
+          <div className="bg-white rounded-lg p-6 hover:bg-gray-50 transition-colors">
+            <h3 className="text-orange-500">Pessoas</h3>
+            <p className="text-sm text-gray-500">Registros biográficos e familiares</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+</main>
+</Base>

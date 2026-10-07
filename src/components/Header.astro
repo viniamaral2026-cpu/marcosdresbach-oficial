@@ -1,0 +1,114 @@
+---
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+---
+<header><div class="w nv">
+<a class="lg" href="/" aria-label="Marcos Dresbach, início"><b>MARCOS <i>DRESBACH</i></b><small>PESSOAS · ANIMAIS · COMUNIDADES</small></a>
+<nav id="nav" aria-label="Principal"><ul>
+<li><a href="/" aria-current={path==='/'?"page":undefined}>Início</a></li>
+<li class="dd"><button type="button" aria-expanded="false" aria-controls="sb">Instituto <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+<ul class="sub" id="sb">
+<li><a href="/instituto/historia">História</a></li>
+<li><a href="/instituto/missao">Missão</a></li>
+<li><a href="/instituto/visao">Visão</a></li>
+<li><a href="/instituto/valores">Valores</a></li>
+<li><a href="/instituto/estrutura">Estrutura</a></li>
+<li><a href="/instituto/equipe">Equipe</a></li>
+<li><a href="/instituto/pesquisadores">Pesquisadores</a></li>
+<li><a href="/instituto/projetos">Projetos</a></li>
+<li><a href="/instituto/documentos">Documentos</a></li>
+<li><a href="/instituto/transparencia">Transparência</a></li>
+</ul></li></li>
+<li class="dd"><button type="button" aria-expanded="false" aria-controls="sc">Cultura <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+<ul class="sub" id="sc">
+<li><a href="/cultura/historia">História</a></li>
+<li><a href="/cultura/imigracao">Imigração</a></li>
+<li><a href="/cultura/tradicoes">Tradições</a></li>
+<li><a href="/cultura/patrimonio">Patrimônio</a></li>
+<li><a href="/cultura/lingua">Língua</a></li>
+<li><a href="/cultura/costumes">Costumes</a></li>
+<li><a href="/cultura/comunidades">Comunidades</a></li>
+<li><a href="/cultura/personagens">Personagens</a></li>
+</ul></li></li>
+<li class="dd"><button type="button" aria-expanded="false" aria-controls="sd">Memória Wittgenstein <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+<ul class="sub" id="sd">
+<li><a href="/memoria-wittgenstein/historia">História</a></li>
+<li><a href="/memoria-wittgenstein/territorio">Território</a></li>
+<li><a href="/memoria-wittgenstein/familias">Famílias</a></li>
+<li><a href="/memoria-wittgenstein/personagens">Personagens</a></li>
+<li><a href="/memoria-wittgenstein/documentos">Documentos</a></li>
+<li><a href="/memoria-wittgenstein/fotografias">Fotografias</a></li>
+<li><a href="/memoria-wittgenstein/mapas">Mapas</a></li>
+<li><a href="/memoria-wittgenstein/cronologia">Cronologia</a></li>
+</ul></li></li>
+<li class="dd"><button type="button" aria-expanded="false" aria-controls="se">Acervo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+<ul class="sub" id="se">
+<li><a href="/acervo">Catálogo</a></li>
+<li><a href="/acervo/busca">Busca</a></li>
+<li><a href="/acervo/artigos">Artigos</a></li>
+<li><a href="/acervo/categorias">Categorias</a></li>
+<li><a href="/acervo/colecoes">Coleções</a></li>
+<li><a href="/acervo/documentos">Documentos</a></li>
+<li><a href="/acervo/fotografias">Fotografias</a></li>
+<li><a href="/acervo/mapas">Mapas</a></li>
+<li><a href="/acervo/livros">Livros</a></li>
+<li><a href="/acervo/jornais">Jornais</a></li>
+<li><a href="/acervo/pessoas">Pessoas</a></li>
+<li><a href="/acervo/familias">Famílias</a></li>
+<li><a href="/acervo/locais">Locais</a></li>
+<li><a href="/acervo/temas">Temas</a></li>
+<li><a href="/acervo/fontes">Fontes</a></li>
+<li><a href="/acervo/cronologias">Cronologias</a></li>
+</ul></li></li>
+<li class="dd"><button type="button" aria-expanded="false" aria-controls="sf">Genealogia <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+<ul class="sub" id="sf">
+<li><a href="/genealogia">Árvore Genealógica</a></li>
+<li><a href="/genealogia/busca">Busca</a></li>
+<li><a href="/genealogia/pessoas">Pessoas</a></li>
+<li><a href="/genealogia/familias">Famílias</a></li>
+<li><a href="/genealogia/arvores">Árvores</a></li>
+<li><a href="/genealogia/locais">Locais</a></li>
+<li><a href="/genealogia/documentos">Documentos</a></li>
+<li><a href="/genealogia/fontes">Fontes</a></li>
+<li><a href="/genealogia/eventos">Eventos</a></li>
+<li><a href="/genealogia/contribuir">Contribuir</a></li>
+</ul></li></li>
+<li class="dd"><button type="button" aria-expanded="false" aria-controls="sg">Pesquisa <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+<ul class="sub" id="sg">
+<li><a href="/pesquisa">Pesquisa e Estudos</a></li>
+<li><a href="/pesquisa/projetos">Projetos</a></li>
+<li><a href="/pesquisa/pesquisadores">Pesquisadores</a></li>
+<li><a href="/pesquisa/estudos">Estudos</a></li>
+<li><a href="/pesquisa/artigos">Artigos</a></li>
+<li><a href="/pesquisa/fontes">Fontes</a></li>
+<li><a href="/pesquisa/metodologia">Metodologia</a></li>
+<li><a href="/pesquisa/submeter">Submeter</a></li>
+</ul></li></li>
+<li class="dd"><button type="button" aria-expanded="false" aria-controls="sh">Editora <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+<ul class="sub" id="sh">
+<li><a href="/editora">Catálogo</a></li>
+<li><a href="/editora/catalogo">Catálogo</a></li>
+<li><a href="/editora/livros">Livros</a></li>
+<li><a href="/editora/autores">Autores</a></li>
+<li><a href="/editora/colecoes">Coleções</a></li>
+<li><a href="/editora/publicacoes">Publicações</a></li>
+<li><a href="/editora/revistas">Revistas</a></li>
+<li><a href="/editora/lancamentos">Lançamentos</a></li>
+<li><a href="/editora/submissao">Submissão</a></li>
+</ul></li></li>
+<li class="dd"><a href="/editais">Editais</a></li>
+<li><a href="/noticias">Notícias</a></li>
+<li><a href="/eventos">Eventos</a></li>
+<li><a href="/busca">Busca</a></li>
+<li class="dd"><a href="/participe">Participar</a><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+<ul class="sub" id="si">
+<li><a href="/participe/seja-membro">Seja Membro</a></li>
+<li><a href="/participe/colabore">Colabore</a></li>
+<li><a href="/participe/pesquisa">Pesquisa</a></li>
+<li><a href="/participe/acervo">Acervo</a></li>
+<li><a href="/participe/genealogia">Genealogia</a></li>
+</ul></li></li>
+<li><a href="/contato" aria-current={path.startsWith('/contato')?"page":undefined}>Contato</a></li></ul>
+<a class="btn cta dcta" href="/contato"><svg><use href="#send"/></svg>FALE COMIGO</a></nav>
+<a class="btn cta cta-d" href="/contato"><svg><use href="#send"/></svg>FALE COMIGO</a>
+<button class="bur" id="bu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">☰</button>
+</div></header>

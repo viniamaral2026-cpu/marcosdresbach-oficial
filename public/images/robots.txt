@@ -1,0 +1,41 @@
+# Robots.txt para Instituto Brasileiro Dresbach
+# Domínio oficial: https://www.institutodresbach.fit
+
+User-agent: *
+Allow: /
+
+# Páginas públicas permitidas
+Allow: /$
+Allow: /a-familia/
+Allow: /memoria/
+Allow: /genealogia/
+Allow: /territorio/
+Allow: /rede-dresbach/
+Allow: /projeto-social/
+Allow: /contato/
+Allow: /acervo-historico/
+Allow: /acervo-historico/familia/
+Allow: /acervo-historico/regiao/
+Allow: /acervo-historico/brasil/
+Allow: /acervo-historico/fontes/
+Allow: /acervo-historico/descobertas/
+Allow: /acervo-historico/paten/
+Allow: /acervo-historico/hausthroniken/
+Allow: /acervo-historico/projetos/
+Allow: /busca/
+Allow: /wiki/
+
+# Áreas administrativas/privadas - bloqueadas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /genealogia/arvore/
+Disallow: /painel/
+Disallow: /_next/
+Disallow: /_vercel/
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://www.institutodresbach.fit/sitemap.xml
+
+# Host
+Host: https://www.institutodresbach.fit

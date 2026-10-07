@@ -1,0 +1,17 @@
+# Ciclo de Vida do Pedido
+
+CREATED
+→ PAYMENT_PENDING
+→ PAID
+→ QUEUED_FOR_PRODUCTION
+→ IN_PRODUCTION
+→ PACKED
+→ SHIPPED
+→ DELIVERED
+
+Exceções:
+CANCELLED
+REFUNDED
+PAYMENT_FAILED
+
+A transição deve ser controlada pelo domínio.

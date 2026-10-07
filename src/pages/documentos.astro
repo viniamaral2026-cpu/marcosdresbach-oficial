@@ -1,0 +1,46 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Documentos — Instituto Brasileiro Dresbach"
+  description="Documentos oficiais, estatutos, relatórios e atas do Instituto Brasileiro Dresbach"
+>
+<main id="top">
+  <section class="py-8 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h1 class="text-3xl font-bold text-navy mb-6">Documentos</h1>
+      <p class="text-lg text-gray-600 mb-6">
+        Documentos oficiais, estatutos, relatórios e atas do Instituto Brasileiro Dresbach.
+      </p>
+
+      <section className="bg-white py-8">
+        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="bg-gray-50 rounded-lg p-6">
+            <h3 className="text-orange-500 text-sm font-medium uppercase tracking-wider mb-4">Estatuto Social</h3>
+            <p className="text-gray-500">Estatuto Social do Instituto Brasileiro Dresbach.</p>
+            <a href="#" className="text-orange-500 font-medium hover:underline">Ver documento</a>
+          </div>
+          <div className="bg-gray-50 rounded-lg p-6">
+            <h3 className="text-orange-500 text-sm font-medium uppercase tracking-wider mb-4">Relatórios Anuais</h3>
+            <p className="text-gray-500">Relatórios de atividades dos anos anteriores.</p>
+            <a href="#" className="text-orange-500 font-medium hover:underline">Ver relatórios</a>
+          </div>
+          <div className="bg-gray-50 rounded-lg p-6">
+            <h3 className="text-orange-500 text-sm font-medium uppercase tracking-wider mb-4">Atas de Assembleias</h3>
+            <p className="text-gray-500">Registros de assembleias e reuniões do Instituto.</p>
+            <a href="#" className="text-orange-500 font-medium hover:underline">Ver atas</a>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-gray-50 py-8">
+        <div className="max-w-7xl mx-auto px-4">
+          <p className="text-gray-500 text-sm">
+            Mais documentos disponíveis na seção de transparência do Instituto.
+          </p>
+        </div>
+      </section>
+    </div>
+  </section>
+</main>
+</Base>

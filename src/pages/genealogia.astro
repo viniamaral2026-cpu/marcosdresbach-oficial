@@ -1,0 +1,93 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Árvore Genealógica — Instituto Brasileiro Dresbach"
+  description="Explore a árvore genealógica da família Dresbach, linhagens e conexões históricas"
+>
+<main id="top">
+  <section class="py-8 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h1 class="text-3xl font-bold text-navy mb-6">Árvore Genealógica</h1>
+      <p class="text-lg text-gray-600 mb-6">
+        Explore a história da família Dresbach, linhagens e conexões históricas.
+      </p>
+      {/* Breadcrumb */}
+      <nav class="bg-white border-b border-gray-200" aria-label="breadcrumb">
+        <ol class="max-w-7xl mx-auto px-4 py-3 flex items-center gap-2">
+          <li>
+            <a href="/" className="text-sm text-gray-500">Início</a>
+          </li>
+          <li>
+            <a href="/genealogia" className="text-sm text-gray-500">Genealogia</a>
+          </li>
+          <li>
+            <span className="text-sm text-gray-500" aria-current="page">Árvore Genealógica</span>
+          </li>
+        </ol>
+      </nav>
+
+      {/* Metrics */}
+      <section className="bg-white py-8">
+        <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 gap-4">
+          <div className="bg-gray-50 rounded-lg p-4">
+            <p className="text-3xl font-extrabold text-navy">2.487</p>
+            <p className="text-sm text-gray-500">Pessoas registradas</p>
+          </div>
+          <div className="bg-gray-50 rounded-lg p-4">
+            <p className="text-3xl font-extrabold text-navy">426</p>
+            <p className="text-sm text-gray-500">Famílias</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Tree Controls */}
+      <section className="bg-white py-4 border-y border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center gap-4">
+          <div className="relative flex-1">
+            <input
+              type="text"
+              placeholder="Buscar pessoa na árvore..."
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-orange-500 focus:outline-none"
+            />
+          </div>
+          <button className="px-4 py-2 text-sm text-orange bg-white rounded-lg border border-orange-300 hover:bg-orange-50 hover:text-orange">
+            Buscar
+          </button>
+        </div>
+      </section>
+
+      {/* Main Canvas Area */}
+      <section className="py-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-2xl font-bold text-navy mb-6">Canvas da Árvore</h2>
+          <p className="text-gray-600 mb-6">
+            Árvore genealógica interativa com nós de pessoas, linhas de conexão e controles de navegação.
+          </p>
+          <div className="h-64 bg-gray-100 rounded-lg border border-dashed border-gray-300 flex items-center justify-center">
+            <p className="text-gray-400">Canvas da árvore genealógica</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Right Panel */}
+      <section className="py-8 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="bg-gray-50 rounded-lg p-6 mb-8">
+            <h3 className="text-lg font-medium text-navy mb-4">Detalhes da Pessoa</h3>
+            <p className="text-gray-500">
+              Selecione um nó na árvore para ver os detalhes da pessoa no painel lateral.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-lg font-medium text-navy mb-4">Timeline Inferior</h3>
+            <div className="h-10 bg-gray-100 rounded-lg border border-gray-300 flex items-center justify-center text-sm text-gray-400">
+              1700 • 1750 • 1800 • 1850 • 1900 • 1950 • 2000
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+</main>
+</Base>

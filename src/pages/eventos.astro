@@ -1,0 +1,58 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Eventos — Instituto Brasileiro Dresbach"
+  description="Eventos, cronogramas e atividades do Instituto Brasileiro Dresbach"
+>
+<main id="top">
+  <section class="py-8 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h1 class="text-3xl font-bold text-navy mb-6">Eventos</h1>
+      <p class="text-lg text-gray-600 mb-6">
+        Eventos, cronogramas e atividades do Instituto Brasileiro Dresbach.
+      </p>
+
+      <section className="bg-white py-8">
+        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="bg-white rounded-lg p-6 border-b border-orange-500">
+            <div className="flex justify-between items-start">
+              <div>
+                <h3 className="text-orange-500">Palestra: Saúde Única</h3>
+                <p className="text-sm text-gray-500">25/01/2024</p>
+              </div>
+              <span className="text-orange-500 text-sm">Presencial</span>
+            </div>
+          </div>
+          <div className="bg-white rounded-lg p-6 border-b border-orange-500">
+            <div className="flex justify-between items-start">
+              <div>
+                <h3 className="text-orange-500">Workshop: Genealogia</h3>
+                <p className="text-sm text-gray-500">15/02/2024</p>
+              </div>
+              <span className="text-orange-500 text-sm">Online</span>
+            </div>
+          </div>
+          <div className="bg-white rounded-lg p-6 border-b border-orange-500">
+            <div className="flex justify-between items-start">
+              <div>
+                <h3 className="text-orange-500">Encontro Familiar</h3>
+                <p className="text-sm text-gray-500">10/03/2024</p>
+              </div>
+              <span className="text-orange-500 text-sm">Presencial</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-8 bg-gray-100">
+        <div className="max-w-7xl mx-auto px-4">
+          <p className="text-gray-500 text-sm">
+            Mais eventos disponíveis no calendário oficial do Instituto.
+          </p>
+        </div>
+      </section>
+    </div>
+  </section>
+</main>
+</Base>
